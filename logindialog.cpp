@@ -28,7 +28,6 @@ this->close();
    reg->exec();
        registerUsername=reg->user;
        registerPassword=reg->passwd;
-
     flag=2;
 }
 
