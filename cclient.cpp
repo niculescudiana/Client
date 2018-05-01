@@ -3,7 +3,7 @@
 #include "logindialog.h"
 #include <ctime>
 #include "socket.h"
-
+//#include <Windows.h>
 
 CClient::CClient()
 {
@@ -12,22 +12,24 @@ CClient::CClient()
 
 void CClient::startClient()
 {
-socket mp_socket;
 mp_socket.test();
 
-
 LoginDialog* login=new LoginDialog();
-
-//if(login->exec()==QDialog::Accepted())
-
 
 login->exec();
 
 if(login->flag==1){
-mp_socket.send("1;");
-mp_socket.send(login->getUsername());
-mp_socket.send(";");
-mp_socket.send(login->getPassword());
+QString mesaj;
+mesaj.append("1;");
+mesaj.append(login->getUsername());
+mesaj.append(";");
+mesaj.append(login->getPassword());
+
+char* cstr;
+cstr = new char [mesaj.size()+1];
+sprintf(cstr,"%s",(const char *)mesaj.toStdString().c_str());
+
+mp_socket.send(cstr);
 }
 
 else
@@ -39,4 +41,10 @@ else
        mp_socket.send(login->getRegisterPassword());
     }
 
+
+mp_socket.waitforreadyRead();
+
+
 }
+
+

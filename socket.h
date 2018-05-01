@@ -16,7 +16,6 @@ private:
 public:
     explicit socket(QObject *parent=0);
     void test();
-signals:
 
 public slots:
     void connected();
@@ -24,6 +23,7 @@ public slots:
     void bytesWritten(qint64 bytes);
     void readyRead();
     void send(const char* data);
+    void waitforreadyRead();
 
 };
 
