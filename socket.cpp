@@ -40,6 +40,8 @@ void socket::readyRead()
             qDebug()<< "Am primit buzz";
         if(strcmp(data,"login")==0)
             qDebug()<< "Am primit login";
+        if(strcmp(data,"register")==0)
+            qDebug()<<"Am primit register";
 
 }
 
@@ -57,7 +59,7 @@ connect(msocket,SIGNAL(readyRead()),this,SLOT(readyRead()));
 connect(msocket,SIGNAL(bytesWritten(qint64)),this,SLOT(bytesWritten(qint64)));
 connect(msocket,SIGNAL(send(const char*)),this,SLOT( send(const char*)));
 qDebug()<<"Connecting...";
-msocket->connectToHost("192.168.11.76",1234);
+msocket->connectToHost("172.20.10.3",1234);
 if(!msocket->waitForConnected(1000))
     qDebug()<<"Error: "<<msocket->errorString();
 }

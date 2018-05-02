@@ -12,11 +12,9 @@ class RegisterDialog : public QDialog
     Q_OBJECT
 
 public:
-    const char *user, *passwd;
-
-public:
     explicit RegisterDialog(QWidget *parent = 0);
     ~RegisterDialog();
+     const char *user, *passwd;
 
 private slots:
     void on_pushButtonSubmit_clicked();

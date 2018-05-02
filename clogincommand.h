@@ -6,9 +6,11 @@
 class CLoginCommand : public ICommand
 {
 public:
+    const char* message;
     CLoginCommand();
     ~CLoginCommand();
     void execute();
+    const char* returnMessage();
 };
 
 #endif // CLOGINCOMMAND_H

@@ -16,7 +16,7 @@ LoginDialog::~LoginDialog()
     delete ui;
 }
 
-
+/*
 void LoginDialog::on_RegisterPushButton_clicked()
 {
 //open Register Dialog
@@ -30,7 +30,7 @@ this->close();
        registerPassword=reg->passwd;
     flag=2;
 }
-
+*/
 void LoginDialog::on_pushButtonLogin_clicked()
 {
     QString usrName=ui->lineEditUsername->text();

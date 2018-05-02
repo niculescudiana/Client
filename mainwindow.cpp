@@ -12,3 +12,15 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_pushButtonLogin_clicked()
+{
+    flag=1;
+    this->hide();
+}
+
+void MainWindow::on_pushButtonRegister_clicked()
+{
+    flag=2;
+    this->hide();
+}

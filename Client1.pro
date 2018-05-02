@@ -35,7 +35,10 @@ SOURCES += \
     registerdialog.cpp \
     cvote.cpp \
     cclient.cpp \
-    ballotwindow.cpp
+    ballotwindow.cpp \
+    mainwindow.cpp \
+    cregistercommand.cpp \
+    menudialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,10 +51,15 @@ HEADERS += \
     registerdialog.h \
     cvote.h \
     cclient.h \
-    ballotwindow.h
+    ballotwindow.h \
+    mainwindow.h \
+    cregistercommand.h \
+    menudialog.h
 
 FORMS += \
         mainwindow.ui \
     logindialog.ui \
     registerdialog.ui \
-    ballotwindow.ui
+    ballotwindow.ui \
+    mainwindow.ui \
+    menudialog.ui

@@ -13,7 +13,8 @@ public:
   std::string password;
   socket mp_socket;
   CVote* Vote;
-  Command_Factory* CommandFactory;
+  int command_number;
+  //Command_Factory* CommandFactory;
 
 public:
     CClient();
@@ -22,6 +23,7 @@ public:
     CClient(std::string username, std::string){}
     void sendVote(CVote* Vote){}
     void getRooms(std::string roomList){}
+    void commandHandler();
 
 };
 
