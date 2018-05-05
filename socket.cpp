@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<windows.h>
 
-
 socket::socket(QObject *parent)
 {
 
