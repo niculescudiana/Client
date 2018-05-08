@@ -23,7 +23,7 @@ public:
     CClient(std::string username, std::string){}
     void sendVote(CVote* Vote){}
     void getRooms(std::string roomList){}
-    void commandHandler();
+  //  void commandHandler();
 
 };
 

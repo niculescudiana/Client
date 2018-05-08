@@ -38,7 +38,15 @@ SOURCES += \
     ballotwindow.cpp \
     mainwindow.cpp \
     cregistercommand.cpp \
-    menudialog.cpp
+    menudialog.cpp \
+    ccommandhandler.cpp \
+    ballot1.cpp \
+    menuvoting1.cpp \
+    menuvoting2.cpp \
+    cvotecommand2.cpp \
+    sondaj.cpp \
+    cvotecommand3.cpp \
+    ballot2.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -54,7 +62,15 @@ HEADERS += \
     ballotwindow.h \
     mainwindow.h \
     cregistercommand.h \
-    menudialog.h
+    menudialog.h \
+    ccommandhandler.h \
+    ballot1.h \
+    menuvoting1.h \
+    menuvoting2.h \
+    cvotecommand2.h \
+    sondaj.h \
+    cvotecommand3.h \
+    ballot2.h
 
 FORMS += \
         mainwindow.ui \
@@ -62,4 +78,9 @@ FORMS += \
     registerdialog.ui \
     ballotwindow.ui \
     mainwindow.ui \
-    menudialog.ui
+    menudialog.ui \
+    ballot1.ui \
+    menuvoting1.ui \
+    menuvoting2.ui \
+    sondaj.ui \
+    ballot2.ui

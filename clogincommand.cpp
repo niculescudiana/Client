@@ -1,17 +1,18 @@
 #include "clogincommand.h"
 #include<iostream>
 #include"logindialog.h"
+#include<QDebug>
 
 CLoginCommand::CLoginCommand(){}
 CLoginCommand::~CLoginCommand(){}
 
 void CLoginCommand::execute(){
-    std::cout << "Login Command created!\n";
+    qDebug() << "Login Command created!\n";
     LoginDialog* login=new LoginDialog();
 
     login->exec();
 
-    if(login->flag==1){
+
     QString mesaj;
     mesaj.append("1;");
     mesaj.append(login->getUsername());
@@ -23,10 +24,6 @@ void CLoginCommand::execute(){
     sprintf(cstr,"%s",(const char *)mesaj.toStdString().c_str());
     message=cstr;
 
-}
-    else
-        if(login->flag==2)
-            message="register";
 
 }
 

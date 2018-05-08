@@ -1,20 +1,20 @@
-#include "cvotecommand.h"
+#include "cvotecommand3.h"
 #include<iostream>
 #include<QDebug>
-#include"ballot1.h"
+#include"ballot2.h"
 
-CVoteCommand::CVoteCommand(){}
-CVoteCommand::~CVoteCommand(){}
+CVoteCommand3::CVoteCommand3(){}
+CVoteCommand3::~CVoteCommand3(){}
 
-void CVoteCommand::execute()
+void CVoteCommand3::execute()
 {
     qDebug() << "Vote Command created!";
-    Ballot1* ballot=new Ballot1();
+    Ballot2* ballot=new Ballot2();
 
     ballot->exec();
 
     QString mesaj;
-    mesaj.append("3;1;");
+    mesaj.append("3;3;");
     mesaj.append(ballot->option);
 
     char* cstr;
@@ -22,7 +22,7 @@ void CVoteCommand::execute()
     sprintf(cstr,"%s",(const char *)mesaj.toStdString().c_str());
     message=cstr;
 }
-const char* CVoteCommand::returnMessage()
+const char* CVoteCommand3::returnMessage()
 {
     return message;
 }

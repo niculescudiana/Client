@@ -7,19 +7,11 @@
 #include"icommand.h"
 #include"mainwindow.h"
 #include "menudialog.h"
+#include "ccommandhandler.h"
 
 CClient::CClient()
 {
 
-}
-
-int showmenu()
-{
-    MainWindow* menu=new MainWindow();
-    menu->show();
-
-    int nr=menu->flag;
-    return nr;
 }
 
 void CClient::startClient()
@@ -32,13 +24,24 @@ menu->exec();
 
 command_number=menu->flag;
 
-commandHandler();
+CCommandHandler* CommandHandler= new CCommandHandler();
+CommandHandler->createCommand(command_number);
+const char* message= CommandHandler->getMessage();
+QString msg=message;
+int x=msg.split(";")[0].toInt();
+if(x==1 || x==2){
+username=msg.split(";")[1].toStdString();
+password=msg.split(";")[2].toStdString();
+}
+mp_socket.send(message);
+
+//commandHandler();
 
 mp_socket.waitforreadyRead();
 
 }
 
-
+/*
 void CClient::commandHandler()
 {
     CommandFactory* CommandFact=new CommandFactory();
@@ -59,3 +62,4 @@ void CClient::commandHandler()
     }
 }
 
+*/

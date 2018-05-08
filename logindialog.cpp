@@ -7,7 +7,6 @@ LoginDialog::LoginDialog(QWidget *parent) :
     ui(new Ui::LoginDialog)
 {
     ui->setupUi(this);
-    flag=0;
 
 }
 
@@ -16,21 +15,7 @@ LoginDialog::~LoginDialog()
     delete ui;
 }
 
-/*
-void LoginDialog::on_RegisterPushButton_clicked()
-{
-//open Register Dialog
 
-this->close();
-   RegisterDialog* reg=new RegisterDialog();
-   //if(reg->exec()==QDialog::Accepted())
-
-   reg->exec();
-       registerUsername=reg->user;
-       registerPassword=reg->passwd;
-    flag=2;
-}
-*/
 void LoginDialog::on_pushButtonLogin_clicked()
 {
     QString usrName=ui->lineEditUsername->text();
@@ -47,9 +32,8 @@ void LoginDialog::on_pushButtonLogin_clicked()
     username=cstr;
     password=cstr2;
 
-    flag=1;
 
-    accepted();
+   this->hide();
 
 }
 

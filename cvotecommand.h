@@ -5,9 +5,11 @@
 class CVoteCommand: public ICommand
 {
 public:
+    const char* message;
     CVoteCommand();
     ~CVoteCommand();
     void execute();
+    const char* returnMessage();
 };
 
 #endif // CVOTECOMMAND_H
